@@ -24,7 +24,6 @@ export default class SearchBar extends Component{
 					className='form-control' 
 					placeholder='Search Youtube' />
 				</form>
-				Value of the input: {this.state.term}
 			</div>
 		);
 	}
