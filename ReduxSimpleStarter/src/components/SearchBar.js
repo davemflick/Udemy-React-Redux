@@ -8,18 +8,18 @@ export default class SearchBar extends Component{
 		this.handleInputChange = this.handleInputChange.bind(this);
 	}
 
-	handleInputChange(e){
-		this.setState({term: e.target.value})
+	handleInputChange(term){
+		this.setState({term})
+		this.props.searchTerm(term);
 	}
 
 	render(){
 		return(
-			<div>
+			<div className='search-bar'>
 				<form className='form-group'>
-					<label>Search</label>
 					<input 
 					value={this.state.term}
-					onChange={this.handleInputChange}
+					onChange={e=> this.handleInputChange(e.target.value)}
 					type='search' 
 					className='form-control' 
 					placeholder='Search Youtube' />
